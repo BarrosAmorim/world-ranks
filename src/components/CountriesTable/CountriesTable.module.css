@@ -9,8 +9,13 @@
     cursor: pointer;
 }
 
-.heading_name, .heading_population {
+.heading_flag {
     flex: 1;
+    margin-right: 8px;
+}
+
+.heading_name, .heading_population, .heading_area {
+    flex: 4;
     padding: 20px;
     color: var(--text-color-secondary);
     font-weight: 500;
@@ -41,6 +46,7 @@
     box-shadow: var(--box-shadow);
     font-weight: 500;
     transition: transform 200ms ease-in-out,  box-shadow 200ms ease-in-out;
+    cursor: pointer;
 }
 
 .row:hover {
@@ -49,10 +55,24 @@
 }
 
 .name {
-    flex: 1;
+    flex: 4;
     text-align: left;
 }
 
 .population {
+    flex: 4;
+}
+
+.area {
+    flex: 4;
+}
+
+.flag {
     flex: 1;
+    border-radius: 2px;
+    margin-right: 8px;
+}
+
+.flag img{
+    width: 100%;
 }

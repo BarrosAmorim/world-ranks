@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from './Layout.module.css'
 
 const Layout = ({ children, title = 'World Ranks' }) => {
@@ -10,7 +11,9 @@ const Layout = ({ children, title = 'World Ranks' }) => {
                 <link rel="icon" href="/img/favicon.png" />
             </Head>
             <header className={styles.header}>
-                <img src="/img/logo.svg" alt="logo" />
+                <Link href="/">
+                    <img src="/img/logo.svg" alt="logo" />
+                </Link>
             </header>
             <main className={styles.main}>{children}</main>
 

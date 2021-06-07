@@ -1,9 +1,10 @@
 .container {
     padding: 24px;
     height: 100vh;
-
     display: grid;
     grid-template-rows: auto 1fr auto;
+    max-width: 1110px;
+    margin: 0 auto;
 }
 
 .header {
@@ -11,6 +12,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 32px;
+    cursor: pointer;
 }
 
 .footer {

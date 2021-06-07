@@ -58,21 +58,37 @@ const CountriesTable = ({ countries }) => {
     return (
         <div>
             <div className={styles.heading}>
+                
+                <div className={styles.heading_flag}>
+
+                </div>
+
                 <button className={styles.heading_name} onClick={() => setValueDirection('name')}>
                     <div>Nome</div>
-                    <SortArraw />
+                    {value === 'name' && <SortArraw direction={direction} />}
                 </button>
+
                 <button className={styles.heading_population} onClick={() => setValueDirection('population')}>
                     <div>População</div>
-                    <SortArraw direction={direction} />
+                    {value === 'population' && <SortArraw direction={direction} />}
                 </button>
+
+                <button className={styles.heading_area} onClick={() => setValueDirection('area')}>
+                    <div>Área (Km<sup style={{fontSize: '0.5rem'}}>2</sup>) </div>
+                    {value === 'area' &&<SortArraw direction={direction} />}
+                </button>
+
             </div>
             {orderedCountries.map((country, index) => {
                 return (
                     <Link key={index} href={`/country/${country.alpha3Code}`}>
                         <div className={styles.row}>
+                            <div className={styles.flag}>
+                                <img src={country.flag} alt={country.name} />
+                            </div>
                             <div className={styles.name}> {country.name} </div>
                             <div className={styles.population}> {country.population} </div>
+                            <div className={styles.population}> {country.area || 0} </div>
                         </div>
                     </Link>
                 )

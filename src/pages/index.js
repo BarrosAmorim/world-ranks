@@ -21,7 +21,7 @@ export default function Home({ countries }) {
   return (
     <Layout>
       <div className={styles.counts}>
-        Pesquisar por {countries.length} Países
+        Pesquise por {countries.length} Países
       </div>
       <SearchInput placeholder="Pesquise por Nome, Região ou SubRegião" onChange={onInputChange} />
       <CountriesTable countries={filteredCountries} />
