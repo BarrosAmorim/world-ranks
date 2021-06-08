@@ -9,10 +9,10 @@ export default function Home({ countries }) {
   const [keyword, setKeyword] = useState("")
 
   const filteredCountries = countries.filter(
-    (country) => 
-    country.name.toLowerCase().includes(keyword) ||
-    country.region.toLowerCase().includes(keyword) ||
-    country.subregion.toLowerCase().includes(keyword))
+    (country) =>
+      country.name.toLowerCase().includes(keyword) ||
+      country.region.toLowerCase().includes(keyword) ||
+      country.subregion.toLowerCase().includes(keyword))
 
   const onInputChange = (e) => {
     e.preventDefault()
@@ -20,10 +20,15 @@ export default function Home({ countries }) {
   }
   return (
     <Layout>
-      <div className={styles.counts}>
-        Pesquise por {countries.length} Países
+      <div className={styles.inputContainer}>
+        <div className={styles.counts}>
+          Pesquise por {countries.length} Países
       </div>
-      <SearchInput placeholder="Pesquise por Nome, Região ou SubRegião" onChange={onInputChange} />
+        <div className={styles.input}>
+          <SearchInput placeholder="Pesquise por Nome, Região ou SubRegião" onChange={onInputChange} />
+        </div>
+      </div>
+
       <CountriesTable countries={filteredCountries} />
     </Layout>
   )

@@ -1,5 +1,6 @@
 .heading {
    display: flex;
+   padding: 20px;
 }
 
 .heading button {
@@ -11,12 +12,11 @@
 
 .heading_flag {
     flex: 1;
-    margin-right: 8px;
+    margin-right: 16px;
 }
 
 .heading_name, .heading_population, .heading_area {
     flex: 4;
-    padding: 20px;
     color: var(--text-color-secondary);
     font-weight: 500;
     display: flex;
@@ -40,6 +40,8 @@
     display: flex;
     padding: 20px;
     text-align: center;
+    justify-content: center;
+    align-items: center;
     background-color: var(--background-color-light);
     border-radius: 8px;
     margin-bottom: 16px;
@@ -69,10 +71,24 @@
 
 .flag {
     flex: 1;
-    border-radius: 2px;
-    margin-right: 8px;
+    margin-right: 16px;
 }
 
 .flag img{
     width: 100%;
+    border-radius: 2px;
+}
+
+@media screen and (max-width: 720px) {
+        .area, .heading_area {
+        display: none;
+    }
+    
+    .flag, .heading_flag  {
+        display: none;
+    }
+    
+    .flag img{
+        display: none;
+    }
 }
